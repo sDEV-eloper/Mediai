@@ -1,8 +1,11 @@
 "use client";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import axios from "axios"
 import { Heading } from "@/components/heading";
-import { MessageSquare } from "lucide-react";
+import { Code, MessageSquare } from "lucide-react";
 import * as z from "zod";
+import ReactMarkdown from "react-markdown"
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { formSchema } from "./constants";
@@ -21,7 +24,7 @@ import { BotAvatar } from "@/components/bot-avatar";
 import { UserAvatar } from "@/components/user-avatar";
 
 
-const ConversationPage = () => {
+const CodePage = () => {
 
   const router=useRouter()
   const [messages, setMessages]=useState<ChatCompletionRequestMessage[]>([])
@@ -41,7 +44,7 @@ const ConversationPage = () => {
 
       }
       const newMessages=[...messages, userMessage]
-      const response= await axios.post("/api/conversation",{
+      const response= await axios.post("/api/code",{
         messages: newMessages,
 
       })
@@ -58,12 +61,12 @@ const ConversationPage = () => {
   return (
     <div>
       <Heading
-        title="Conversation"
+        title="Code Generation"
         description="Our most advanced conversation
 model."
-        icon={MessageSquare}
-        iconColor="text-violet-500"
-        bgColor="bg-violet-500/10"
+        icon={Code}
+        iconColor="text-green-700"
+        bgColor="bg-green-500/10"
       />
       <div className="px-4 lg:px-8"> 
         <Form {...form}>
@@ -85,7 +88,7 @@ model."
     focus-visible: ring-0
     focus-visible: ring-transparent"
                       disabled={isLoading}
-                      placeholder="How do I calculate the radius of a circle?"
+                      placeholder="Fetch API in reactjs"
                       {...field}
                     />
                   </FormControl>
@@ -112,9 +115,24 @@ model."
           {messages.map((message)=>(
             <div key={message.content}
             className={cn("p-8  flex items-start gap-x-8 rounded-lg ml-4 mr-4", 
-            message.role==="user"?"bg-white border border-black/10":"bg-gradient-to-tl from-green-100 via-blue-300 to-purple-300")}>
+            message.role==="user"?"bg-gray-500/10 border border-black/10":"bg-gradient-to-br from-blue-400 via-purple-300 to-green-200")}>
               {message.role==="user"?<UserAvatar/>:<BotAvatar/>  }
-         {message.content}
+         <p>
+         <ReactMarkdown components={{
+                  pre: ({ node, ...props }) => (
+                    <div className="overflow-auto w-full my-2 bg-gray-800 text-white p-2 rounded-lg">
+                      <pre {...props} />
+                    </div>
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="bg-black/10 rounded-lg p-1" {...props} />
+                  )
+                }} className="text-sm overflow-hidden leading-7">
+                  {message.content || ""}
+                </ReactMarkdown>
+
+         </p>
+              
             </div>
           ))}
         </div>
@@ -124,4 +142,4 @@ model."
     );
   };
 
-export default ConversationPage;
+export default CodePage;
