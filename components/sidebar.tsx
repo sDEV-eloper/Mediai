@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "@/public/images/logo.png";
+import Logo from "@/public/images/logo4.png";
 import { Montserrat } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { usePathname } from 'next/navigation'
@@ -26,7 +26,7 @@ bg-[#111827] text-white"
           className="flex
 items-center pl-3 mb-14"
         >
-          <div className="relative w-8 h-8 mr-4">
+          <div className="relative w-10 h-10 mr-4">
             <Image fill alt="Logo" src={Logo} />
           </div>
           <h1 className={cn("text-2xl font-bold", montserrat.className)}>
