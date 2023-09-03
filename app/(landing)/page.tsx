@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { UserButton } from "@clerk/nextjs";
+
 import Link from "next/link";
 import Logo from "@/public/images/logo4.png"
 import Image from "next/image";
@@ -9,16 +8,15 @@ export default function LandingPage() {
  
   return (
     <div>
-      {/* <!-- Section: Design Block --> */}
+
       <section className="mb-40 ">
-        {/* <!-- Navbar --> */}
         <nav
           className="relative flex w-full items-center justify-between bg-white py-2 shadow-sm shadow-neutral-700/10 dark:bg-neutral-800 dark:shadow-black/30 lg:flex-wrap lg:justify-start"
           data-te-navbar-ref>
-          {/* <!-- Container wrapper --> */}
+
           <div className="flex w-full flex-wrap items-center justify-between px-6">
             <div className="flex items-center">
-              {/* <!-- Toggle button --> */}
+
               <button
                 className="block border-0 bg-transparent py-2 pr-2.5 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
                 type="button" data-te-collapse-init data-te-target="#navbarSupportedContentY"
@@ -32,7 +30,7 @@ export default function LandingPage() {
                 </span>
               </button>
 
-              {/* <!-- Navbar brand --> */}
+        
               <Link className="text-primary dark:text-primary-400" href="#!">
                 <div className="[&>svg]:ml-2 [&>svg]:mr-3 [&>svg]:h-6 [&>svg]:w-6 [&>svg]:lg:ml-0">
                 <div className="flex justify-center items-center gap-2">
@@ -43,7 +41,7 @@ export default function LandingPage() {
               </Link>
             </div>
 
-            {/* <!-- Collapsible wrapper --> */}
+        
            
             
             <div className="my-1 flex items-center lg:my-0 lg:ml-auto">
@@ -85,7 +83,7 @@ export default function LandingPage() {
       }
       </div>
       </section>
-      {/* <!-- Section: Design Block --> */}
+
     </div>
   )
 }

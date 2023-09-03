@@ -1,5 +1,5 @@
 "use client";
-import { ArrowRight, MessageSquare } from "lucide-react";
+import { ArrowRight} from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
