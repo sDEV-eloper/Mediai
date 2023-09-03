@@ -11,7 +11,7 @@ import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import {ChatCompletionRequestMessage} from "openai"
+import ChatCompletionRequestMessage from "openai"
 import { cn } from "@/lib/utils";
 import { Loader } from "@/components/loader";
 import { Empty } from "@/components/ui/empty";
