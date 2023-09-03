@@ -50,3 +50,20 @@ import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, Video
       href: "/settings",
     },
   ];
+  export const feature=[
+    {
+      name:"Chat"
+    },
+    {
+      name:"Image Generation"
+    },
+    {
+      name:"Code Generation"
+    },
+    {
+      name:"Music Generation"
+    },
+    {
+      name:"Video Generation"
+    },
+  ]
