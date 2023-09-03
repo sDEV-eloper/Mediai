@@ -15,8 +15,6 @@ import {ChatCompletionRequestMessage} from "openai"
 import { cn } from "@/lib/utils";
 import { Loader } from "@/components/loader";
 import { Empty } from "@/components/ui/empty";
-import Image from "next/image";
-import UserLogo from "@/public/images/user.png";
 import { BotAvatar } from "@/components/bot-avatar";
 import { UserAvatar } from "@/components/user-avatar";
 
